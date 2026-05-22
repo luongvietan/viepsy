@@ -93,15 +93,6 @@ export function HeroSection() {
               <span className="text-amber-500">✨</span> Cá nhân hóa
             </div>
 
-            {/* Bottom-left: 500+ Thân chủ */}
-            <div
-              className="pointer-events-none absolute left-2 bottom-3 z-20 rounded-xl bg-white px-4 py-3 shadow-lg md:left-4 md:bottom-5"
-              data-animate="hero-badge"
-            >
-              <p className="text-xl font-semibold text-viepsy-accent-sage md:text-2xl">500+</p>
-              <p className="text-[10px] text-viepsy-ink/50 md:text-xs">Thân chủ</p>
-            </div>
-
             {/* Bottom-right: 100% Bảo mật */}
             <div
               className="pointer-events-none absolute -right-5 bottom-12 z-20 rounded-xl bg-white px-4 py-3 shadow-lg md:-right-8 md:bottom-16"
