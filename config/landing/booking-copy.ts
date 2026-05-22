@@ -6,7 +6,7 @@ export const bookingCopy = {
   secondaryEmail: "Gửi email",
   secondaryPhone: "Gọi điện",
   exploreServices: "Xem gói dịch vụ",
-  hint: "Nhắn Zalo hoặc gửi email — Viepsy sẽ phản hồi và xác nhận lịch sớm.",
+  hint: "Gửi form — Viepsy sẽ phản hồi và xác nhận lịch sớm qua email hoặc điện thoại.",
   servicesLead:
     "Ba mức độ đồng hành — chọn gói phù hợp hoặc nhắn Viepsy để được gợi ý.",
 } as const;

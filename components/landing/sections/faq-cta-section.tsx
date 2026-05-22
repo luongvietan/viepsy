@@ -4,6 +4,7 @@ import { useState } from "react";
 import { faqItems } from "@/data/landing/faq";
 import { bookingCopy } from "@/config/landing/booking-copy";
 import { contactLinks } from "@/config/landing/contact-links";
+import { routes } from "@/config/landing/routes";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Button } from "@/components/ui/button";
@@ -107,7 +108,7 @@ export function FaqCtaSection() {
             <div className="flex flex-col items-center justify-center gap-4">
               <Button
                 variant="secondary"
-                href={contactLinks.zalo}
+                href={routes.booking}
                 className="border-transparent bg-viepsy-accent-sage px-10 py-3.5 text-base text-viepsy-inverse-ink hover:bg-viepsy-accent-sage/90"
               >
                 {bookingCopy.primaryCta}

@@ -10,6 +10,8 @@ export const routes = {
   feedback: "/#phan-hoi",
   /** Khối đặt lịch trên trang chủ */
   book: "/#dat-lich",
+  /** Form đặt lịch */
+  booking: "/booking",
   faq: "/#faq",
   process: "/#quy-trinh",
 } as const;

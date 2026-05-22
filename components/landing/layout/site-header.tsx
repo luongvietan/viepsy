@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { navLinks } from "@/data/landing/navigation";
 import { siteConfig } from "@/config/landing/site";
 import { bookingCopy } from "@/config/landing/booking-copy";
-import { contactLinks } from "@/config/landing/contact-links";
 import { routes } from "@/config/landing/routes";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils/cn";
@@ -45,7 +44,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-2 sm:flex">
-          <Button variant="primary" href={contactLinks.zalo}>
+          <Button variant="primary" href={routes.booking}>
             {bookingCopy.navCta}
           </Button>
         </div>
@@ -93,7 +92,7 @@ export function SiteHeader() {
               );
             })}
             <li className="pt-2">
-              <Button variant="primary" href={contactLinks.zalo}>
+              <Button variant="primary" href={routes.booking}>
                 {bookingCopy.primaryCta}
               </Button>
             </li>

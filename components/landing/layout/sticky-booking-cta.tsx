@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { contactLinks } from "@/config/landing/contact-links";
+import { routes } from "@/config/landing/routes";
 import { bookingCopy } from "@/config/landing/booking-copy";
 import { cn } from "@/lib/utils/cn";
 
@@ -38,9 +38,7 @@ export function StickyBookingCta() {
         )}
       >
         <a
-          href={contactLinks.zalo}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={routes.booking}
           aria-label={bookingCopy.primaryCtaLong}
           className="flex w-full items-center justify-center gap-2 rounded-full bg-viepsy-accent-sage py-3 text-base font-medium text-viepsy-inverse-ink transition-colors hover:bg-viepsy-accent-sage/90"
         >
@@ -58,9 +56,7 @@ export function StickyBookingCta() {
         )}
       >
         <a
-          href={contactLinks.zalo}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={routes.booking}
           aria-label={bookingCopy.primaryCtaLong}
           className="flex items-center gap-2 rounded-full bg-viepsy-accent-sage px-6 py-3 text-sm font-medium text-viepsy-inverse-ink shadow-lg transition-all hover:scale-105 hover:bg-viepsy-accent-sage/90"
         >
