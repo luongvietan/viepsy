@@ -1,26 +1,142 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --viepsy-primary: #2c2419;
+  --viepsy-on-primary: #fffbf7;
+  --viepsy-canvas: #fffbf7;
+  --viepsy-ink: #2c2419;
+  --viepsy-inverse-ink: #fffbf7;
+  --viepsy-surface-soft: #f5f0e8;
+  --viepsy-hairline: #e5ddd3;
+  --viepsy-hairline-soft: #ede8e0;
+  --viepsy-accent-sage: #6b8f71;
+  --viepsy-accent-warm: #b87d6a;
+  --viepsy-success: #5a8f6a;
+  --viepsy-block-lime: #e4ebe0;
+  --viepsy-block-lilac: #ebe6f0;
+  --viepsy-block-cream: #f5ede4;
+  --viepsy-block-mint: #dde8e0;
+  --viepsy-block-pink: #f0e8e4;
+  --viepsy-block-coral: #e8ddd4;
+  --viepsy-block-navy: #3d4f4a;
+  --viepsy-audience-light: #d5e2cc;
+  --viepsy-audience-dark: #3d441e;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--viepsy-canvas);
+  --color-foreground: var(--viepsy-ink);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-viepsy-primary: var(--viepsy-primary);
+  --color-viepsy-on-primary: var(--viepsy-on-primary);
+  --color-viepsy-canvas: var(--viepsy-canvas);
+  --color-viepsy-ink: var(--viepsy-ink);
+  --color-viepsy-inverse-ink: var(--viepsy-inverse-ink);
+  --color-viepsy-surface-soft: var(--viepsy-surface-soft);
+  --color-viepsy-hairline: var(--viepsy-hairline);
+  --color-viepsy-accent-sage: var(--viepsy-accent-sage);
+  --color-viepsy-accent-warm: var(--viepsy-accent-warm);
+  --color-viepsy-block-lime: var(--viepsy-block-lime);
+  --color-viepsy-block-lilac: var(--viepsy-block-lilac);
+  --color-viepsy-block-cream: var(--viepsy-block-cream);
+  --color-viepsy-block-mint: var(--viepsy-block-mint);
+  --color-viepsy-block-pink: var(--viepsy-block-pink);
+  --color-viepsy-block-coral: var(--viepsy-block-coral);
+  --color-viepsy-block-navy: var(--viepsy-block-navy);
+  --color-viepsy-audience-light: var(--viepsy-audience-light);
+  --color-viepsy-audience-dark: var(--viepsy-audience-dark);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+html.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--viepsy-canvas);
+  color: var(--viepsy-ink);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-weight: 320;
+  font-size: 18px;
+  line-height: 1.45;
+  letter-spacing: -0.26px;
 }
+
+.text-display-xl {
+  font-size: clamp(2.75rem, 6vw, 5.375rem);
+  font-weight: 340;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.text-display-lg {
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 340;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.text-headline {
+  font-size: 1.625rem;
+  font-weight: 540;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.text-subhead {
+  font-size: 1.625rem;
+  font-weight: 340;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.text-eyebrow {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.text-body-lg {
+  font-size: 1.25rem;
+  font-weight: 330;
+  line-height: 1.4;
+  letter-spacing: -0.007em;
+}
+
+.text-body-sm {
+  font-size: 1rem;
+  font-weight: 330;
+  line-height: 1.45;
+  letter-spacing: -0.009em;
+}
+
+.text-button {
+  font-size: 1.125rem;
+  font-weight: 480;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+/* Folder shapes — dùng SVG trong components/ui/folder-shape.tsx */
