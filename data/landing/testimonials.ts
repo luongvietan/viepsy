@@ -2,7 +2,8 @@ export const testimonials = [
   {
     initials: "T.L",
     name: "Thảo L.",
-    profile: "28 tuổi · Nhân viên văn phòng",
+    gender: "Nữ",
+    age: 28,
     context: "Lo âu · Công việc",
     rating: 5,
     content:
@@ -12,7 +13,8 @@ export const testimonials = [
   {
     initials: "M.H",
     name: "Minh H.",
-    profile: "34 tuổi · Freelancer",
+    gender: "Nam",
+    age: 34,
     context: "Mối quan hệ",
     rating: 5,
     content:
@@ -22,7 +24,8 @@ export const testimonials = [
   {
     initials: "N.K",
     name: "Ngọc K.",
-    profile: "25 tuổi · Sinh viên đại học",
+    gender: "Nữ",
+    age: 25,
     context: "Khủng hoảng cá nhân",
     rating: 5,
     content:

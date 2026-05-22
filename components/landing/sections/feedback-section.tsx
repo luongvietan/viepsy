@@ -3,7 +3,6 @@
 import { testimonials } from "@/data/landing/testimonials";
 import { routes } from "@/config/landing/routes";
 import { Section } from "@/components/ui/section";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { SplitHeading } from "@/components/ui/split-heading";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils/cn";
@@ -34,8 +33,7 @@ export function FeedbackSection() {
       className="scroll-mt-16 border-t border-viepsy-hairline bg-viepsy-surface-soft"
     >
       <div className="mb-12 text-center" data-animate="section-header">
-        <Eyebrow className="mb-3">Phản hồi từ thân chủ</Eyebrow>
-        <SplitHeading lead="Câu chuyện" accent="có thật" />
+        <SplitHeading lead="Phản hồi từ" accent="thân chủ" />
       </div>
 
       <div
@@ -94,7 +92,7 @@ export function FeedbackSection() {
                       isFeatured ? "text-viepsy-block-lime" : "text-viepsy-ink/60",
                     )}
                   >
-                    {t.profile}
+                    {t.gender} · {t.age} tuổi
                   </p>
                 </div>
               </div>

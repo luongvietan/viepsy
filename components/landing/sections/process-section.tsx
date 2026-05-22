@@ -3,11 +3,7 @@ import { SectionDrumBackground } from "@/components/landing/section-drum-backgro
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { SplitHeading } from "@/components/ui/split-heading";
-import { FolderShape, FolderTabSlot } from "@/components/ui/folder-shape";
-import { FOLDER_TAB_PRESETS } from "@/lib/folder-path";
 import { cn } from "@/lib/utils/cn";
-
-const TAB = FOLDER_TAB_PRESETS.process;
 
 export function ProcessSection() {
   return (
@@ -47,10 +43,6 @@ export function ProcessSection() {
               const isRight = index % 2 === 0;
               const isFirst = index === 0;
               const isLast = index === processSteps.length - 1;
-              // Mobile: always left tab for consistent flow
-              // Desktop: alternate left/right
-              const mobileTabSide = "left" as const;
-              const desktopTabSide = isRight ? ("right" as const) : ("left" as const);
 
               return (
                 <li
@@ -64,7 +56,8 @@ export function ProcessSection() {
                   <span
                     className={cn(
                       "absolute left-2.5 top-1/2 z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-viepsy-canvas bg-viepsy-accent-sage md:left-1/2",
-                      isLast && "ring-2 ring-viepsy-accent-sage/30 ring-offset-2 ring-offset-viepsy-surface-soft/50",
+                      isLast &&
+                        "ring-2 ring-viepsy-accent-sage/30 ring-offset-2 ring-offset-viepsy-surface-soft/50",
                     )}
                     aria-hidden
                   />
@@ -77,78 +70,21 @@ export function ProcessSection() {
                         : "md:col-start-1 md:justify-self-end",
                     )}
                   >
-                    {/* Mobile version: always left-aligned */}
-                    <div className="md:hidden">
-                      <FolderShape
-                        tab={mobileTabSide}
-                        uniformTab
-                        tabMinWidth={TAB.width}
-                        tabMinHeight={TAB.height}
-                        fillClassName={
-                          isFirst
-                            ? "fill-viepsy-block-navy"
-                            : "fill-viepsy-block-mint"
-                        }
-                        className={cn(
-                          "w-full max-w-md",
-                          isFirst
-                            ? "text-viepsy-inverse-ink"
-                            : "text-viepsy-ink",
-                        )}
-                      >
-                        <FolderTabSlot side={mobileTabSide}>
-                          <span className="rounded-full bg-viepsy-primary px-2.5 py-1 text-[10px] font-medium tracking-wide text-viepsy-inverse-ink">
-                            {step.duration}
-                          </span>
-                        </FolderTabSlot>
-
-                        <div className="p-5 sm:p-6">
-                          <span className="text-eyebrow mb-3 block opacity-80">
-                            Bước {step.step}
-                          </span>
-                          <h3 className="text-headline mb-2">{step.title}</h3>
-                          <p className="text-body-sm leading-relaxed opacity-92">
-                            {step.description}
-                          </p>
-                        </div>
-                      </FolderShape>
-                    </div>
-
-                    {/* Desktop version: alternating sides */}
-                    <div className="hidden md:block">
-                      <FolderShape
-                        tab={desktopTabSide}
-                        uniformTab
-                        tabMinWidth={TAB.width}
-                        tabMinHeight={TAB.height}
-                        fillClassName={
-                          isFirst
-                            ? "fill-viepsy-block-navy"
-                            : "fill-viepsy-block-mint"
-                        }
-                        className={cn(
-                          "w-full max-w-md",
-                          isFirst
-                            ? "text-viepsy-inverse-ink"
-                            : "text-viepsy-ink",
-                        )}
-                      >
-                        <FolderTabSlot side={desktopTabSide}>
-                          <span className="rounded-full bg-viepsy-primary px-2.5 py-1 text-[10px] font-medium tracking-wide text-viepsy-inverse-ink">
-                            {step.duration}
-                          </span>
-                        </FolderTabSlot>
-
-                        <div className="p-6 md:p-7">
-                          <span className="text-eyebrow mb-3 block opacity-80">
-                            Bước {step.step}
-                          </span>
-                          <h3 className="text-headline mb-2">{step.title}</h3>
-                          <p className="text-body-sm leading-relaxed opacity-92">
-                            {step.description}
-                          </p>
-                        </div>
-                      </FolderShape>
+                    <div
+                      className={cn(
+                        "w-full max-w-md rounded-[1.75rem] p-5 sm:p-6 md:p-7",
+                        isFirst
+                          ? "bg-viepsy-block-navy text-viepsy-inverse-ink"
+                          : "bg-viepsy-block-mint text-viepsy-ink",
+                      )}
+                    >
+                      <span className="text-eyebrow mb-3 block opacity-80">
+                        Bước {step.step}
+                      </span>
+                      <h3 className="text-headline mb-2">{step.title}</h3>
+                      <p className="text-body-sm leading-relaxed opacity-92">
+                        {step.description}
+                      </p>
                     </div>
                   </div>
                 </li>
