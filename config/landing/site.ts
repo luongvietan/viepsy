@@ -1,4 +1,4 @@
-const CONTACT_PHONE = "0985015926";
+const CONTACT_PHONE = "0799161939";
 const ZALO_URL = `https://zalo.me/${CONTACT_PHONE}`;
 
 export const siteConfig = {
