@@ -5,7 +5,10 @@ import { services } from "@/data/landing/services";
 import { bookingCopy } from "@/config/landing/booking-copy";
 import { contactLinks } from "@/config/landing/contact-links";
 import { Button } from "@/components/ui/button";
+import { DatePickerField } from "@/components/ui/date-picker-field";
+import { SelectField } from "@/components/ui/select-field";
 import { cn } from "@/lib/utils/cn";
+import { getTodayISO } from "@/lib/utils/date";
 import type { BookingFormData, BookingFormErrors } from "@/lib/booking/types";
 
 const TIME_SLOTS = [
@@ -72,13 +75,7 @@ export function BookingForm() {
   );
   const [feedback, setFeedback] = useState("");
 
-  const minDate = useMemo(() => {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, "0");
-    const day = String(today.getDate()).padStart(2, "0");
-    return `${year}-${month}-${day}`;
-  }, []);
+  const minDate = useMemo(() => getTodayISO(), []);
 
   const updateField = <K extends keyof BookingFormData>(
     key: K,
@@ -176,20 +173,16 @@ export function BookingForm() {
           required
           error={errors.serviceId}
         >
-          <select
+          <SelectField
             id="serviceId"
-            name="serviceId"
             value={form.serviceId}
-            onChange={(event) => updateField("serviceId", event.target.value)}
-            className={cn(fieldClassName, "appearance-none")}
-          >
-            <option value="">Chọn gói phù hợp</option>
-            {services.map((service) => (
-              <option key={service.id} value={service.id}>
-                {service.title} — {service.duration}
-              </option>
-            ))}
-          </select>
+            onChange={(value) => updateField("serviceId", value)}
+            placeholder="Chọn gói phù hợp"
+            options={services.map((service) => ({
+              value: service.id,
+              label: `${service.title} — ${service.duration}`,
+            }))}
+          />
         </FormField>
 
         <FormField
@@ -198,16 +191,12 @@ export function BookingForm() {
           required
           error={errors.preferredDate}
         >
-          <input
+          <DatePickerField
             id="preferredDate"
-            name="preferredDate"
-            type="date"
-            min={minDate}
             value={form.preferredDate}
-            onChange={(event) =>
-              updateField("preferredDate", event.target.value)
-            }
-            className={fieldClassName}
+            onChange={(value) => updateField("preferredDate", value)}
+            minDate={minDate}
+            placeholder="Chọn ngày mong muốn"
           />
         </FormField>
 
@@ -217,22 +206,16 @@ export function BookingForm() {
           required
           error={errors.preferredTime}
         >
-          <select
+          <SelectField
             id="preferredTime"
-            name="preferredTime"
             value={form.preferredTime}
-            onChange={(event) =>
-              updateField("preferredTime", event.target.value)
-            }
-            className={cn(fieldClassName, "appearance-none")}
-          >
-            <option value="">Chọn khung giờ</option>
-            {TIME_SLOTS.map((slot) => (
-              <option key={slot.value} value={slot.value}>
-                {slot.label}
-              </option>
-            ))}
-          </select>
+            onChange={(value) => updateField("preferredTime", value)}
+            placeholder="Chọn khung giờ"
+            options={TIME_SLOTS.map((slot) => ({
+              value: slot.value,
+              label: slot.label,
+            }))}
+          />
         </FormField>
 
         <div className="md:col-span-2">
