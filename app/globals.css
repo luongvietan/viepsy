@@ -63,9 +63,10 @@ body {
   color: var(--viepsy-ink);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   font-weight: 320;
-  font-size: 18px;
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
   line-height: 1.45;
   letter-spacing: -0.26px;
+  overflow-x: clip;
 }
 
 .text-display-xl {
@@ -83,14 +84,14 @@ body {
 }
 
 .text-headline {
-  font-size: 1.625rem;
+  font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.625rem);
   font-weight: 540;
   line-height: 1.35;
   letter-spacing: -0.01em;
 }
 
 .text-subhead {
-  font-size: 1.625rem;
+  font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.625rem);
   font-weight: 340;
   line-height: 1.35;
   letter-spacing: -0.01em;
@@ -106,7 +107,7 @@ body {
 }
 
 .text-body-lg {
-  font-size: 1.25rem;
+  font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
   font-weight: 330;
   line-height: 1.4;
   letter-spacing: -0.007em;
@@ -120,7 +121,7 @@ body {
 }
 
 .text-button {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
   font-weight: 480;
   line-height: 1.4;
   letter-spacing: -0.005em;

@@ -14,7 +14,7 @@ export function Section({
   ...props
 }: SectionProps) {
   return (
-    <section id={id} className={cn("py-16 md:py-24", className)} {...props}>
+    <section id={id} className={cn("py-12 sm:py-16 md:py-24", className)} {...props}>
       <Container className={containerClassName}>{children}</Container>
     </section>
   );
@@ -45,11 +45,11 @@ export function ColorBlockSection({
   ...props
 }: ColorBlockProps) {
   return (
-    <section id={id} className={cn("py-16 md:py-24", className)} {...props}>
+    <section id={id} className={cn("py-12 sm:py-16 md:py-24", className)} {...props}>
       <Container>
         <div
           className={cn(
-            "rounded-none px-8 py-12 md:rounded-3xl md:px-12 md:py-16",
+            "rounded-none px-5 py-10 sm:px-8 sm:py-12 md:rounded-3xl md:px-12 md:py-16",
             blockStyles[block],
             inverse && "text-viepsy-inverse-ink",
             containerClassName,

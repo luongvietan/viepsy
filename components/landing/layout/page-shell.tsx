@@ -8,7 +8,7 @@ export function PageShell({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <FloatingContactBar />
-      <main className="flex-1 pl-14 sm:pl-0">{children}</main>
+      <main className="flex-1 pb-20 md:pb-0">{children}</main>
       <SiteFooter />
       <StickyBookingCta />
     </div>

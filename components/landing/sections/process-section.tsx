@@ -13,7 +13,7 @@ export function ProcessSection() {
     <section
       id="quy-trinh"
       data-animate-section="process"
-      className="scroll-mt-16 border-t border-viepsy-hairline bg-viepsy-surface-soft/50 py-16 md:py-24"
+      className="scroll-mt-16 border-t border-viepsy-hairline bg-viepsy-surface-soft/50 py-12 sm:py-16 md:py-24"
     >
       <Container>
         <div
@@ -54,7 +54,7 @@ export function ProcessSection() {
                   key={step.step}
                   data-animate="process-step"
                   className={cn(
-                    "relative pl-12 md:grid md:grid-cols-2 md:items-center md:gap-8 md:pl-0",
+                    "relative pl-10 sm:pl-12 md:grid md:grid-cols-2 md:items-center md:gap-8 md:pl-0",
                     isLast && "mb-0",
                   )}
                 >
@@ -99,7 +99,7 @@ export function ProcessSection() {
                           </span>
                         </FolderTabSlot>
 
-                        <div className="p-6">
+                        <div className="p-5 sm:p-6">
                           <span className="text-eyebrow mb-3 block opacity-80">
                             Bước {step.step}
                           </span>

@@ -32,7 +32,7 @@ export function AudienceCard({ item, index }: AudienceCardProps) {
     <article className="group h-full" data-animate="audience-card">
       <div
         className={cn(
-          "relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-viepsy-hairline/50 bg-gradient-to-br p-6 shadow-sm transition-all duration-300 hover:shadow-md md:p-7",
+          "relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-viepsy-hairline/50 bg-gradient-to-br p-5 shadow-sm transition-all duration-300 hover:shadow-md sm:rounded-[2rem] sm:p-6 md:p-7",
           GRADIENT_STYLES[index],
         )}
       >

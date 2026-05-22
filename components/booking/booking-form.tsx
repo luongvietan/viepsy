@@ -125,7 +125,7 @@ export function BookingForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-[2rem] border border-viepsy-hairline bg-viepsy-surface-soft/40 p-6 md:p-10"
+      className="rounded-[1.5rem] border border-viepsy-hairline bg-viepsy-surface-soft/40 p-5 sm:rounded-[2rem] sm:p-6 md:p-10"
     >
       <div className="grid gap-6 md:grid-cols-2">
         <FormField id="name" label="Họ và tên" required error={errors.name}>
@@ -252,7 +252,7 @@ export function BookingForm() {
           type="submit"
           variant="primary"
           className={cn(
-            "min-w-44 bg-viepsy-accent-sage px-8 py-3 text-viepsy-inverse-ink hover:bg-viepsy-accent-sage/90",
+            "w-full min-w-0 bg-viepsy-accent-sage px-8 py-3 text-viepsy-inverse-ink hover:bg-viepsy-accent-sage/90 sm:w-auto sm:min-w-44",
             status === "submitting" && "pointer-events-none opacity-70",
           )}
         >

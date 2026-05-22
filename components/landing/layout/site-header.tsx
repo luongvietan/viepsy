@@ -16,7 +16,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-viepsy-hairline bg-viepsy-canvas/95 backdrop-blur-sm">
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-6 lg:px-8">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link
           href={routes.home}
           className="text-eyebrow font-[540] tracking-widest"
@@ -75,7 +75,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <nav className="border-t border-viepsy-hairline px-6 py-5 md:hidden">
+        <nav className="border-t border-viepsy-hairline px-4 py-5 sm:px-6 md:hidden">
           <ul className="flex flex-col gap-3">
             {navLinks.map((link) => {
               const active = pathname === link.href;

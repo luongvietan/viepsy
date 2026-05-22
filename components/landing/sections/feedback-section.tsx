@@ -39,22 +39,22 @@ export function FeedbackSection() {
       </div>
 
       <div
-        className="mb-12 grid grid-cols-3 gap-4 rounded-2xl bg-viepsy-canvas p-6 shadow-sm md:gap-8 md:p-8"
+        className="mb-10 grid grid-cols-3 gap-2 rounded-2xl bg-viepsy-canvas p-4 shadow-sm sm:gap-4 sm:p-6 md:mb-12 md:gap-8 md:p-8"
         data-animate="feedback-stats"
       >
         {stats.map((stat) => (
           <div key={stat.label} className="text-center">
-            <p className="text-2xl font-bold text-viepsy-accent-sage md:text-4xl">
+            <p className="text-xl font-bold text-viepsy-accent-sage sm:text-2xl md:text-4xl">
               {stat.value}
             </p>
-            <p className="mt-1 text-xs text-viepsy-ink/70 md:text-sm">
+            <p className="mt-1 text-[10px] leading-snug text-viepsy-ink/70 sm:text-xs md:text-sm">
               {stat.label}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-5 sm:gap-6 md:grid-cols-3">
         {testimonials.map((t, i) => {
           const isFeatured = i === 1;
           return (
@@ -62,14 +62,14 @@ export function FeedbackSection() {
               key={i}
               data-animate="feedback-card"
               className={cn(
-                "relative flex h-full flex-col overflow-hidden rounded-[2rem] p-8 shadow-md",
+                "relative flex h-full flex-col overflow-hidden rounded-[1.75rem] p-6 shadow-md sm:rounded-[2rem] sm:p-8",
                 CARD_BG[i],
               )}
             >
               {/* Large decorative quote mark */}
               <div
                 className={cn(
-                  "absolute -right-2 -top-4 text-[8rem] font-bold leading-none opacity-10",
+                  "absolute -right-2 -top-4 text-[5rem] font-bold leading-none opacity-10 sm:text-[8rem]",
                   isFeatured ? "text-viepsy-block-lime" : "text-viepsy-accent-sage",
                 )}
                 aria-hidden
@@ -115,7 +115,7 @@ export function FeedbackSection() {
                 ))}
               </div>
 
-              <p className="relative z-10 mb-6 flex-1 text-xl leading-relaxed md:text-2xl">
+              <p className="relative z-10 mb-6 flex-1 text-lg leading-relaxed sm:text-xl md:text-2xl">
                 &ldquo;{t.content}&rdquo;
               </p>
 

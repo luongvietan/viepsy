@@ -4,7 +4,7 @@ export function VisualBreakSection() {
   return (
     <section
       data-animate-section="visual-break"
-      className="relative overflow-hidden py-24 md:py-32"
+      className="relative overflow-hidden py-16 sm:py-20 md:py-32"
     >
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-viepsy-block-mint via-viepsy-canvas to-viepsy-block-cream opacity-60" />
@@ -13,7 +13,7 @@ export function VisualBreakSection() {
       <div className="absolute left-[-10%] top-[20%] h-64 w-64 rounded-full bg-viepsy-accent-sage/10 blur-3xl md:h-96 md:w-96" />
       <div className="absolute right-[-10%] bottom-[20%] h-64 w-64 rounded-full bg-viepsy-block-lime/20 blur-3xl md:h-96 md:w-96" />
       
-      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6">
         {/* Large decorative quote mark */}
         <div className="mb-8 flex justify-center" data-animate="quote-icon">
           <svg
@@ -28,7 +28,7 @@ export function VisualBreakSection() {
         
         {/* Main quote */}
         <blockquote className="mb-8" data-animate="quote-text">
-          <p className="text-3xl font-[340] leading-relaxed text-viepsy-ink md:text-5xl md:leading-[1.3]">
+          <p className="text-2xl font-[340] leading-relaxed text-viepsy-ink sm:text-3xl md:text-5xl md:leading-[1.3]">
             Đôi khi, chỉ cần được{" "}
             <span className="font-semibold text-viepsy-accent-sage">lắng nghe</span>
             <br className="hidden md:block" />

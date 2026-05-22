@@ -19,7 +19,7 @@ export function FaqCtaSection() {
       <section
         id="faq"
         data-animate-section="faq"
-        className="scroll-mt-16 border-t border-viepsy-hairline py-16 md:py-24"
+        className="scroll-mt-16 border-t border-viepsy-hairline py-12 sm:py-16 md:py-24"
       >
         <Container className="max-w-3xl">
           <div data-animate="section-header">
@@ -46,11 +46,11 @@ export function FaqCtaSection() {
                   >
                   <button
                     type="button"
-                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-viepsy-surface-soft/50"
+                    className="flex w-full items-center justify-between gap-3 px-4 py-4 text-left transition-colors hover:bg-viepsy-surface-soft/50 sm:gap-4 sm:px-6 sm:py-5"
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                     aria-expanded={isOpen}
                   >
-                    <span className="text-body-lg font-[480] text-viepsy-ink">
+                    <span className="text-base font-[480] text-viepsy-ink sm:text-body-lg">
                       {item.question}
                     </span>
                     <span
@@ -69,7 +69,7 @@ export function FaqCtaSection() {
                     className={cn(
                       "overflow-hidden transition-all duration-200",
                       isOpen
-                        ? "max-h-96 border-t border-viepsy-hairline/60 px-6 pb-5 pt-4 opacity-100"
+                        ? "max-h-96 border-t border-viepsy-hairline/60 px-4 pb-4 pt-3 opacity-100 sm:px-6 sm:pb-5 sm:pt-4"
                         : "max-h-0 opacity-0",
                     )}
                   >
@@ -88,10 +88,10 @@ export function FaqCtaSection() {
       <section
         id="dat-lich"
         data-animate-section="cta"
-        className="scroll-mt-16 px-4 pb-16 md:px-6 md:pb-24 lg:px-8"
+        className="scroll-mt-16 px-4 pb-12 sm:pb-16 md:px-6 md:pb-24 lg:px-8"
       >
         <div
-          className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-viepsy-block-navy px-8 py-12 text-viepsy-inverse-ink md:rounded-[2.5rem] md:px-14 md:py-16"
+          className="mx-auto max-w-7xl overflow-hidden rounded-[1.5rem] bg-viepsy-block-navy px-5 py-10 text-viepsy-inverse-ink sm:rounded-[2rem] sm:px-8 sm:py-12 md:rounded-[2.5rem] md:px-14 md:py-16"
           data-animate="cta-panel"
         >
           <div className="mx-auto max-w-2xl text-center" data-animate="cta-content">
@@ -113,14 +113,14 @@ export function FaqCtaSection() {
               >
                 {bookingCopy.primaryCta}
               </Button>
-              <div className="flex items-center gap-4 text-body-sm opacity-80">
+              <div className="flex flex-col items-center justify-center gap-2 text-body-sm opacity-80 sm:flex-row sm:gap-4">
                 <a
                   href={contactLinks.phone}
                   className="text-viepsy-inverse-ink underline underline-offset-4 hover:opacity-70"
                 >
                   {bookingCopy.secondaryPhone}
                 </a>
-                <span aria-hidden className="opacity-40">·</span>
+                <span aria-hidden className="hidden opacity-40 sm:inline">·</span>
                 <a
                   href={contactLinks.emailBook}
                   className="text-viepsy-inverse-ink underline underline-offset-4 hover:opacity-70"

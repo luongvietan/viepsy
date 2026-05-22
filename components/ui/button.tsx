@@ -38,7 +38,7 @@ export function Button({
   type = "button",
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex min-h-11 items-center justify-center rounded-full text-button font-[480] whitespace-nowrap",
+    "inline-flex min-h-11 items-center justify-center rounded-full text-button font-[480] text-center whitespace-normal sm:whitespace-nowrap",
     variants[variant],
     className,
   );

@@ -18,8 +18,8 @@ export function SiteFooter() {
 
   return (
     <footer className="mt-auto px-4 md:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-t-[2rem] bg-viepsy-block-navy px-8 py-14 text-viepsy-inverse-ink md:rounded-t-[2.5rem] md:px-12 md:py-16">
-        <div className="grid gap-12 lg:grid-cols-4">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-t-[1.5rem] bg-viepsy-block-navy px-5 py-10 text-viepsy-inverse-ink sm:rounded-t-[2rem] sm:px-8 sm:py-12 md:rounded-t-[2.5rem] md:px-12 md:py-16">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <div className="lg:col-span-1">
             <p className="text-eyebrow mb-3 tracking-widest text-viepsy-block-lime">
               {siteConfig.name}

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function BookingPage() {
   return (
     <PageShell>
-      <section className="py-16 md:py-24">
+      <section className="py-12 sm:py-16 md:py-24">
         <Container className="max-w-3xl">
           <Eyebrow className="mb-4">Đặt lịch</Eyebrow>
           <SplitHeading lead="Khi bạn" accent="sẵn sàng" className="mb-4" />

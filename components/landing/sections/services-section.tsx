@@ -24,7 +24,7 @@ export function ServicesSection() {
     <section
       id="dich-vu"
       data-animate-section="services"
-      className="scroll-mt-16 border-y border-viepsy-hairline py-16 md:py-24"
+      className="scroll-mt-16 border-y border-viepsy-hairline py-12 sm:py-16 md:py-24"
     >
       <Container>
         <div
@@ -38,13 +38,13 @@ export function ServicesSection() {
               {bookingCopy.servicesLead}
             </p>
           </div>
-          <p className="max-w-sm text-body-sm font-[320] md:text-right">
+          <p className="hidden max-w-sm text-body-sm font-[320] md:block md:text-right">
             {bookingCopy.servicesLead}
           </p>
         </div>
 
         <div
-          className="grid items-stretch gap-6 lg:grid-cols-3 lg:gap-8"
+          className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8"
           data-animate="service-grid"
         >
           {services.map((service, index) => (
@@ -87,7 +87,7 @@ function ServiceCard({
   return (
     <article
       className={cn(
-        "group relative flex h-full w-full flex-col rounded-[1.75rem] p-6 transition-transform duration-200 hover:-translate-y-0.5 md:p-8",
+        "group relative flex h-full w-full flex-col rounded-[1.75rem] p-5 transition-transform duration-200 hover:-translate-y-0.5 sm:p-6 md:p-8",
         isDark
           ? "bg-viepsy-block-navy text-viepsy-inverse-ink ring-2 ring-viepsy-accent-sage"
           : BLOCK_BG[service.block],
