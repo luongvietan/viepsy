@@ -43,13 +43,18 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid items-stretch gap-6 lg:grid-cols-3 lg:gap-8">
+        <div
+          className="grid items-stretch gap-6 lg:grid-cols-3 lg:gap-8"
+          data-animate="service-grid"
+        >
           {services.map((service, index) => (
-            <ServiceCard
+            <div
               key={service.id}
-              service={service}
-              index={index}
-            />
+              className="flex h-full min-h-0"
+              data-animate="service-card"
+            >
+              <ServiceCard service={service} index={index} />
+            </div>
           ))}
         </div>
 
@@ -81,9 +86,8 @@ function ServiceCard({
 
   return (
     <article
-      data-animate="service-card"
       className={cn(
-        "group relative flex h-full flex-col rounded-[1.75rem] p-6 transition-transform duration-200 hover:-translate-y-0.5 md:p-8",
+        "group relative flex h-full w-full flex-col rounded-[1.75rem] p-6 transition-transform duration-200 hover:-translate-y-0.5 md:p-8",
         isDark
           ? "bg-viepsy-block-navy text-viepsy-inverse-ink ring-2 ring-viepsy-accent-sage"
           : BLOCK_BG[service.block],
@@ -91,10 +95,17 @@ function ServiceCard({
       )}
     >
       <div className="mb-6 flex items-start justify-between gap-4">
-        <div className="flex flex-col gap-2">
+        <div className="flex min-h-[3.25rem] flex-col gap-2">
           <span className="text-eyebrow">Gói {orderLabel[index]}</span>
-          {service.featured && (
+          {service.featured ? (
             <span className="inline-flex w-fit rounded-full bg-viepsy-accent-sage px-2.5 py-1 text-eyebrow text-[0.65rem] font-semibold text-viepsy-inverse-ink">
+              Phổ biến nhất
+            </span>
+          ) : (
+            <span
+              className="inline-flex w-fit rounded-full px-2.5 py-1 text-eyebrow text-[0.65rem] font-semibold opacity-0"
+              aria-hidden
+            >
               Phổ biến nhất
             </span>
           )}
@@ -110,29 +121,31 @@ function ServiceCard({
         </div>
       </div>
 
-      <h3 className="text-headline mb-4 max-w-[16ch]">{service.title}</h3>
+      <div className="flex flex-1 flex-col">
+        <h3 className="text-headline mb-4 max-w-[16ch]">{service.title}</h3>
 
-      <p className="text-body-sm mb-3 font-[340]">{service.description}</p>
-      <p className="text-body-sm mb-6 font-[320]">{service.detail}</p>
+        <p className="text-body-sm mb-3 font-[340]">{service.description}</p>
+        <p className="text-body-sm mb-6 font-[320]">{service.detail}</p>
 
-      <ul className="mb-6 space-y-2.5">
-        {service.suitableFor.map((item) => (
-          <li key={item} className="flex gap-2.5 text-body-sm">
-            <span
-              className={cn(
-                "mt-0.5 flex size-[1.125rem] shrink-0 items-center justify-center rounded-full text-[0.625rem] font-bold",
-                isDark
-                  ? "bg-viepsy-block-lime text-viepsy-ink"
-                  : "bg-viepsy-canvas text-[var(--viepsy-success)]",
-              )}
-              aria-hidden
-            >
-              ✓
-            </span>
-            <span className="font-[330]">{item}</span>
-          </li>
-        ))}
-      </ul>
+        <ul className="mb-6 flex-1 space-y-2.5">
+          {service.suitableFor.map((item) => (
+            <li key={item} className="flex gap-2.5 text-body-sm">
+              <span
+                className={cn(
+                  "mt-0.5 flex size-[1.125rem] shrink-0 items-center justify-center rounded-full text-[0.625rem] font-bold",
+                  isDark
+                    ? "bg-viepsy-block-lime text-viepsy-ink"
+                    : "bg-viepsy-canvas text-[var(--viepsy-success)]",
+                )}
+                aria-hidden
+              >
+                ✓
+              </span>
+              <span className="font-[330]">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <div
         className={cn(

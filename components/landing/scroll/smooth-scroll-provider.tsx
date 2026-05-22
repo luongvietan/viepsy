@@ -29,13 +29,35 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
     gsap.registerPlugin(ScrollTrigger);
 
     const instance = new Lenis({
-      duration: 1.15,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.085,
       smoothWheel: true,
-      touchMultiplier: 1.5,
+      touchMultiplier: 1.35,
+      autoRaf: false,
     });
 
     instance.on("scroll", ScrollTrigger.update);
+
+    ScrollTrigger.scrollerProxy(document.documentElement, {
+      scrollTop(value) {
+        if (arguments.length && value !== undefined) {
+          instance.scrollTo(value, { immediate: true });
+        }
+        return instance.scroll;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
+      pinType: document.documentElement.style.transform ? "transform" : "fixed",
+    });
+
+    const onRefresh = () => instance.resize();
+
+    ScrollTrigger.addEventListener("refresh", onRefresh);
 
     const tick = (time: number) => {
       instance.raf(time * 1000);
@@ -44,11 +66,15 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
     gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
 
+    requestAnimationFrame(() => ScrollTrigger.refresh());
+
     setLenis(instance);
 
     return () => {
+      ScrollTrigger.removeEventListener("refresh", onRefresh);
       gsap.ticker.remove(tick);
       instance.destroy();
+      ScrollTrigger.scrollerProxy(document.documentElement, {});
       setLenis(null);
     };
   }, []);

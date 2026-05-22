@@ -30,7 +30,11 @@ export function ProcessSection() {
 
         <div className="relative mx-auto max-w-4xl">
           <div
-            className="absolute bottom-0 left-4 top-0 w-px bg-viepsy-accent-sage/40 md:left-1/2 md:-translate-x-px"
+            className="absolute bottom-0 left-4 top-0 w-px bg-viepsy-accent-sage/20 md:left-1/2 md:-translate-x-px"
+            aria-hidden
+          />
+          <div
+            className="absolute bottom-0 left-4 top-0 w-px origin-top bg-viepsy-accent-sage md:left-1/2 md:-translate-x-px"
             data-animate="process-line"
             aria-hidden
           />

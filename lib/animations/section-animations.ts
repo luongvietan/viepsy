@@ -5,8 +5,15 @@ import { prefersReducedMotion } from "./prefers-reduced-motion";
 gsap.registerPlugin(ScrollTrigger);
 
 const DEFAULT_SCROLL = {
-  start: "top 82%",
-  toggleActions: "play none none none",
+  start: "top 85%",
+  once: true,
+} as const;
+
+const REVEAL_DEFAULTS = {
+  duration: 0.95,
+  ease: "power2.out",
+  force3D: true,
+  clearProps: "transform,opacity,visibility,filter",
 } as const;
 
 function revealOnScroll(
@@ -19,6 +26,7 @@ function revealOnScroll(
     : (targets as Element | string | undefined);
 
   return gsap.from(targets, {
+    ...REVEAL_DEFAULTS,
     ...vars,
     scrollTrigger: {
       trigger: scrollVars?.trigger ?? defaultTrigger,
@@ -97,6 +105,7 @@ function setupAudience(section: HTMLElement) {
 
 function setupServices(section: HTMLElement) {
   const header = section.querySelector("[data-animate='section-header']");
+  const grid = section.querySelector("[data-animate='service-grid']");
   const cards = section.querySelectorAll("[data-animate='service-card']");
 
   if (header) {
@@ -108,19 +117,28 @@ function setupServices(section: HTMLElement) {
   }
 
   if (cards.length) {
+    const entrances: gsap.TweenVars[] = [
+      { x: -32, y: 24, autoAlpha: 0 },
+      { y: 32, autoAlpha: 0 },
+      { x: 32, y: 24, autoAlpha: 0 },
+    ];
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: grid ?? cards[0],
+        start: "top 86%",
+        once: true,
+      },
+      defaults: {
+        duration: 1.05,
+        ease: "power2.out",
+        force3D: true,
+        clearProps: "transform,opacity,visibility",
+      },
+    });
+
     cards.forEach((card, index) => {
-      const fromX = index % 2 === 0 ? -48 : 48;
-      revealOnScroll(
-        card,
-        {
-          x: fromX,
-          y: 40,
-          opacity: 0,
-          duration: 0.85,
-          ease: "power3.out",
-        },
-        { start: "top 88%" },
-      );
+      tl.from(card, entrances[index] ?? entrances[0], index * 0.08);
     });
   }
 }
@@ -140,11 +158,22 @@ function setupProcess(section: HTMLElement) {
   }
 
   if (line) {
-    gsap.set(line, { scaleY: 0, transformOrigin: "top center" });
-    revealOnScroll(
+    const timeline = section.querySelector("ol") ?? section;
+
+    gsap.fromTo(
       line,
-      { scaleY: 1, duration: 1.4, ease: "power2.inOut" },
-      { trigger: section.querySelector("ol") ?? section, start: "top 75%" },
+      { scaleY: 0, transformOrigin: "top center", force3D: true },
+      {
+        scaleY: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: timeline,
+          start: "top 80%",
+          end: "bottom 40%",
+          scrub: 0.75,
+          invalidateOnRefresh: true,
+        },
+      },
     );
   }
 
@@ -175,9 +204,9 @@ function setupVisualBreak(section: HTMLElement) {
     scrollTrigger: {
       trigger: section,
       start: "top 78%",
-      toggleActions: "play none none none",
+      once: true,
     },
-    defaults: { ease: "power2.out" },
+    defaults: { ease: "power2.out", force3D: true, clearProps: "transform,opacity,visibility,filter" },
   });
 
   if (quoteIcon) {
@@ -325,9 +354,12 @@ export function initSectionAnimations(): () => void {
     SECTION_SETUPS[type]?.(section);
   });
 
-  ScrollTrigger.refresh();
+  const refresh = () => ScrollTrigger.refresh();
+  requestAnimationFrame(refresh);
+  window.addEventListener("load", refresh);
 
   return () => {
+    window.removeEventListener("load", refresh);
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     gsap.globalTimeline.clear();
   };
