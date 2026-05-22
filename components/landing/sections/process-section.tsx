@@ -1,4 +1,5 @@
 import { processSteps } from "@/data/landing/process";
+import { SectionDrumBackground } from "@/components/landing/section-drum-background";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { SplitHeading } from "@/components/ui/split-heading";
@@ -13,9 +14,11 @@ export function ProcessSection() {
     <section
       id="quy-trinh"
       data-animate-section="process"
-      className="scroll-mt-16 border-t border-viepsy-hairline bg-viepsy-surface-soft/50 py-12 sm:py-16 md:py-24"
+      className="relative scroll-mt-16 overflow-hidden border-t border-viepsy-hairline bg-viepsy-surface-soft/50 py-12 sm:py-16 md:py-24"
     >
-      <Container>
+      <SectionDrumBackground />
+
+      <Container className="relative z-10">
         <div
           className="mx-auto mb-12 max-w-2xl text-center md:mb-16"
           data-animate="section-header"

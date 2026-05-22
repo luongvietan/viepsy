@@ -1,5 +1,6 @@
 import { audienceItems } from "@/data/landing/values";
 import { AudienceCard } from "@/components/landing/audience-card";
+import { SectionDrumBackground } from "@/components/landing/section-drum-background";
 import { ColorBlockSection } from "@/components/ui/section";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { SplitHeading } from "@/components/ui/split-heading";
@@ -14,9 +15,12 @@ export function AudienceSection({ id = "doi-tuong" }: AudienceSectionProps) {
       block="cream"
       id={id}
       className="scroll-mt-16"
+      containerClassName="relative overflow-hidden"
       data-animate-section="audience"
     >
-      <div className="mb-10 max-w-3xl md:mb-12" data-animate="section-header">
+      <SectionDrumBackground />
+
+      <div className="relative z-10 mb-10 max-w-3xl md:mb-12" data-animate="section-header">
         <Eyebrow className="mb-3">Đối tượng</Eyebrow>
         <SplitHeading lead="Khi nào nên" accent="tìm sự đồng hành?" />
         <p className="text-body-lg mt-5">
@@ -26,7 +30,7 @@ export function AudienceSection({ id = "doi-tuong" }: AudienceSectionProps) {
         </p>
       </div>
 
-      <div className="grid items-stretch gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-7">
+      <div className="relative z-10 grid items-stretch gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-7">
         {audienceItems.map((item, index) => (
           <AudienceCard key={item.title} item={item} index={index} />
         ))}

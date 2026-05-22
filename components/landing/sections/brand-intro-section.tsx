@@ -27,7 +27,7 @@ export function BrandIntroSection() {
               <p>{siteConfig.description}</p>
               <p>
                 Viepsy đồng hành khi bạn đang lo âu, quá tải, thiếu tự tin, trải
-                qua chuyển giai cuộc sống — hoặc chỉ cần một người lắng nghe chân
+                qua chuyển giao cuộc sống — hoặc chỉ cần một người lắng nghe chân
                 thành.
               </p>
               <p className="text-headline text-viepsy-accent-sage">

@@ -82,8 +82,8 @@ export function HeroSection() {
               <SplitHeading
                 as="h1"
                 size="hero"
-                lead="Khi lo âu hoặc quá tải,"
-                accent="bạn không cần đối mặt một mình."
+                lead="Bạn đang có nhiều suy nghĩ khó chia sẻ,"
+                accent="đây là nơi mà bạn thoải mái nói ra tâm trí của mình."
                 className="mb-0"
               />
             </div>

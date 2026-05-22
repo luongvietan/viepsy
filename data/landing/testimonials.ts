@@ -6,8 +6,8 @@ export const testimonials = [
     context: "Lo âu · Công việc",
     rating: 5,
     content:
-      "Lần đầu tôi cảm thấy được lắng nghe mà không bị phán xét. Sau buổi trò chuyện, tôi nhẹ hơn rất nhiều.",
-    tag: "Lắng nghe tích cực · 30 phút",
+      "Lần đầu kể về lo âu mà không ai hỏi 'sao m không cố gắng hơn'. V lắng nghe, không vội kết luận gì hết. Ra về tôi nhẹ người hơn hẳn — cảm ơn V nhiều lắm.",
+    tag: "Lắng nghe tích cực",
   },
   {
     initials: "M.H",
@@ -16,8 +16,8 @@ export const testimonials = [
     context: "Mối quan hệ",
     rating: 5,
     content:
-      "Viepsy giúp tôi nhìn lại cảm xúc rõ hơn — không còn mông lung. Cách trò chuyện gần gũi, dễ mở lòng.",
-    tag: "Định hướng cá nhân hóa · 60 phút",
+      "Trước giờ tôi cứ lặn lội trong đầu mà không biết mình đang cảm gì. Buổi nói chuyện giúp gom lại được mớ cảm xúc đó, rõ hơn nhiều. V nói chuyện kiểu bạn bè, không formal gì cả. Cảm ơn V nhé.",
+    tag: "Định hướng cá nhân hóa",
   },
   {
     initials: "N.K",
@@ -26,7 +26,7 @@ export const testimonials = [
     context: "Khủng hoảng cá nhân",
     rating: 5,
     content:
-      "Không gian an toàn và nhẹ nhàng. Tôi cảm thấy được tôn trọng trong từng câu chuyện mình chia sẻ.",
-    tag: "Tham vấn chuyên sâu · 90 phút",
+      "Buổi đầu mình hơi ngại nhưng không gian ở đây thật sự dễ thở. Cảm giác được lắng nghe nhẹ nhàng, không ai ép phải kể hết ngay. Cảm ơn V vì đã đồng hành cùng mình.",
+    tag: "Tham vấn chuyên sâu",
   },
 ] as const;

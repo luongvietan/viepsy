@@ -17,7 +17,7 @@ export const services: Service[] = [
     id: "lang-nghe",
     title: "Lắng nghe tích cực",
     price: "150.000",
-    duration: "30 phút",
+    duration: "30p",
     description:
       "Nơi để bạn được chia sẻ những cảm xúc, suy nghĩ hoặc những điều đang giữ trong lòng mà bạn khó, hoặc chưa chia sẻ với người khác.",
     detail:
@@ -28,12 +28,13 @@ export const services: Service[] = [
       "Muốn được lắng nghe mà không bị đánh giá.",
     ],
     block: "mint",
+    featured: true,
   },
   {
     id: "dinh-huong",
     title: "Định hướng · Cá nhân hóa",
     price: "300.000",
-    duration: "60 phút",
+    duration: "60p",
     description:
       "Dành cho những lúc bạn cảm thấy rối, mất hướng hoặc muốn hiểu rõ hơn về cảm xúc, hành vi hay các mối quan hệ của mình.",
     detail:
@@ -44,13 +45,12 @@ export const services: Service[] = [
       "Cần một góc nhìn rõ ràng và phù hợp hơn cho bản thân.",
     ],
     block: "cream",
-    featured: true,
   },
   {
     id: "tham-van",
     title: "Tham vấn chuyên sâu",
     price: "450.000",
-    duration: "90 phút",
+    duration: "90p",
     description:
       "Hình thức đồng hành chuyên sâu hơn dành cho những người đang gặp khó khăn kéo dài về cảm xúc, tâm lý hoặc đời sống cá nhân.",
     detail:

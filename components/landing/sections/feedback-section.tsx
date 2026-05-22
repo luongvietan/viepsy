@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils/cn";
 
 const stats = [
-  { value: "500+", label: "Phiên đồng hành" },
+  { value: "50+", label: "Phiên đồng hành" },
   { value: "100%", label: "Bảo mật" },
   { value: "Online", label: "& trực tiếp" },
 ];

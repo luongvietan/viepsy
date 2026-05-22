@@ -113,7 +113,7 @@ function ServiceCard({
         <div className="shrink-0 text-right">
           <p className="text-[1.5rem] font-[540] leading-none tracking-tight tabular-nums">
             {service.price}
-            <span className="text-body-sm ml-0.5 font-[330]">đ</span>
+            <span className="text-body-sm ml-0.5 font-[330]">đ/Phiên</span>
           </p>
           <p className="text-eyebrow mt-1.5 text-[0.65rem] tracking-[0.08em]">
             {service.duration}

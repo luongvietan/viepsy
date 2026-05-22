@@ -52,7 +52,7 @@ export const audienceItems: readonly AudienceItem[] = [
     icon: "self-esteem",
   },
   {
-    title: "Chuyển giai cuộc sống",
+    title: "Chuyển giao cuộc sống",
     description:
       "Khi đang trải qua những thay đổi lớn và cần sự định hướng, hỗ trợ tinh thần phù hợp với bản thân.",
     icon: "transitions",

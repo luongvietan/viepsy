@@ -180,7 +180,7 @@ export function BookingForm() {
             placeholder="Chọn gói phù hợp"
             options={services.map((service) => ({
               value: service.id,
-              label: `${service.title} — ${service.duration}`,
+              label: service.title,
             }))}
           />
         </FormField>

@@ -27,7 +27,7 @@ const items = [
 export function FloatingContactBar() {
   return (
     <aside
-      className="fixed left-0 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-2 pl-2 md:flex"
+      className="fixed left-0 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-2 pl-2"
       aria-label="Liên hệ nhanh"
     >
       {items.map(({ label, href, icon: Icon, iconClassName, className }) => (
